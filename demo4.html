@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制圆形</title>
+    <style>
+        canvas{
+            background:#c7edcc;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="test" width="500" height="300"></canvas>
+    <script type="text/javascript">
+        window.onload=function(){
+            var canvas=document.querySelector('#test');
+            if(!canvas.getContext)return;
+            var ctx=canvas.getContext('2d');
+            ctx.arc(100,100,50,0,360*(Math.PI/180));
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(200,200);
+            ctx.arcTo(220,220,170,240,20);
+            ctx.stroke();
+            ctx.closePath();
+        }
+    </script>
+</body>
+</html>
